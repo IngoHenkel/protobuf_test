@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package squirrelsquad.test;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+option java_multiple_files = true;
+option java_package = "de.squirrelsquad.tutorials.protobuf.protos";
+option java_outer_classname = "DeepThoughtMessages";
+
+
+message WhoAmI {
+    string serverId = 1;
+    int32 podRequestCounter = 2;
+    google.protobuf.Timestamp livetime = 3;
+
+}
+
+message CalculateIntegerTokens {
+    int32 startVal = 1;
+    int32 endVal = 2;
+    int32 delta = 3;
+}
+
+message IntegerToken {
+    int32 value = 1;
+}

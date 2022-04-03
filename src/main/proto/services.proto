@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package squirrelsquad.test;
+
+option java_multiple_files = true;
+option java_package = "de.squirrelsquad.tutorials.protobuf.protos.service";
+option java_outer_classname = "DeepThoughtService";
+
+
+import "google/protobuf/empty.proto";
+
+import "messages.proto";
+
+service DeepThoughtServices {
+    rpc WhoAreYou (google.protobuf.Empty) returns  (WhoAmI) {}
+    rpc RequestIntegerTokens(CalculateIntegerTokens) returns (stream IntegerToken) {}
+}
