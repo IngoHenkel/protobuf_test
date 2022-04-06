@@ -52,20 +52,9 @@ public class DeepThoughtServices extends DeepThoughtServicesGrpc.DeepThoughtServ
     public void requestIntegerTokens(CalculateIntegerTokens request, StreamObserver<IntegerToken> responseObserver) {
         // TODO Auto-generated method stub
         logger.info("Request integer tokens called");
-        super.requestIntegerTokens(request, responseObserver);
-        responseObserver.onNext(IntegerToken.newBuilder().setValue(1).build());
-        responseObserver.onNext(IntegerToken.newBuilder().setValue(2).build());
-        responseObserver.onCompleted();
-       // CalcIntegerJob newJob = new CalcIntegerJob(request, responseObserver);
+        CalcIntegerJob newJob = new CalcIntegerJob(request, responseObserver);
        // newJob.run();
-        // integerCalcThreads.submit(newJob);
-        // try {
-
-        //     Thread.sleep(5000);
-        // } catch (InterruptedException e) {
-        //     // TODO Auto-generated catch block
-        //     e.printStackTrace();
-        // }
+        integerCalcThreads.submit(newJob);  
         logger.info("Request integer tokens method left");
 
     }
