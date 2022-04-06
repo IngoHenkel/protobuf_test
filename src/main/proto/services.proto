@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package squirrelsquad.test;
+package de.squirrelsquad.tutorials.protobuf.protos.service;
 
 option java_multiple_files = true;
 option java_package = "de.squirrelsquad.tutorials.protobuf.protos.service";
